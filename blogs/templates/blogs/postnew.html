@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blogs/stylesheets.css' %}"/>
+
+<html lang = 'en'>
+    <head>
+        <title>post new blog</title>
+    </head>
+    <body>
+    	<form method = 'post'>{% csrf_token %}
+    		<label>
+    			<div>title</div>
+    			<input name = 'subject' value = '{{title}}'>
+    		</label>
+    		<label>
+    			<div>content</div>
+    			<textarea name = 'content' value = '{{content}}'></textarea>
+    		</label>
+    		<div class = 'error' >{{error}}</div>
+    		<input type = 'submit'> 
+    	</form>
+        
+    </body>
+</html>
+

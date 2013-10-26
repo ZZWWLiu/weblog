@@ -1,0 +1,42 @@
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blogs/stylesheets.css' %}"/>
+<html lang = 'en'>
+    <head>
+        <title>We Blog</title>
+        
+    </head>
+    <body>
+        <h2><a class='main_link' href="/blogs">We Blog</a></h2>
+        <div >
+            <a class = 'postnew' href="/blogs/post">post new</a>
+        </div>
+        <div >
+            <a class = 'signup' href="/blogs/signup">sign up</a>
+        </div>
+        <div >
+            <a class = 'login' href="/blogs/login">login</a>
+        </div>
+        <div>
+            {% if latest_blogs %}
+            {% for blog in latest_blogs %}
+            <div >
+                <a class = 'subject' href="/blogs/{{blog.id}}">
+                    {{blog.title}}
+                </a>
+                
+            </div>
+            <div class = 'date'>{{blog.created}}</div>
+            <hr>
+            <div class = 'content'><pre>{{blog.content}}</pre></div>
+            {% endfor %}
+            {% else %}
+            <p>No blogs are available</p>
+            {% endif %}
+
+        </div>
+        <!-- <div class = "time">Queried {{time}} seconds ago</div> -->
+        
+    </body>
+</html>
+

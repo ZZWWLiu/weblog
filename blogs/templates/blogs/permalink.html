@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html lang = 'en'>
+    <head>
+        <title>We Blog</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/stylesheets.css' %}" />
+    </head>
+    <body>
+        <h2><a class='main_link' href="/blogs">We Blog</a></h2>
+        <div class = 'title'>{{blog.title}}</div>
+        <div class = 'date'>{{blog.created}}</div>
+        <hr>
+        <div class = 'content'><pre>{{blog.content}}</pre></div>
+        <!-- <div class = "time">Queried {{time}} seconds ago</div> -->
+        
+    </body>
+</html>
+

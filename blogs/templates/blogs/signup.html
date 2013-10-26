@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blogs/signup.css' %}"/>
+
+<html lang = 'en'>
+    <head>
+        <title>Sign up</title>
+    </head>
+    <body>
+    	<h2>Please sign up...</h2>
+        <form method="post">
+            <div>
+                <label>Username: <input type = "text" name = "username" value = "{{username}}" ><label><span>{{e1}}</span>
+            </div>
+            <div>
+                <label>Password: <input type = "password" name = "password"}><label><span>{{e2}}</span>
+            </div>
+            <div>
+                <label>Verify: <input type = "password" name = "verify"}><label><span>{{e3}}</span>
+            </div>
+            <div>
+                <label>E-Mail(Optional): <input type = "text" name = "email" value = "{{email}}" ><label><span>{{e4}}</span>
+            </div>
+            <div><input type = "submit" ></div>
+        </form>
+    </body>
+</html>
+
